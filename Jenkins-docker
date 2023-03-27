@@ -13,25 +13,7 @@ pipeline{
                 
             }
         }
-        stage('Upload War To Nexus'){
-            steps{
-                  nexusArtifactUploader artifacts: [
-                       [
-                            artifactId: 'myweb', 
-                            classifier: '', 
-                            file: "target/myweb-8.2.0.war", 
-                            type: 'war'
-                       ]
-                  ], 
-                  credentialsId: 'nexus3', 
-                  groupId: 'in.javahome', 
-                  nexusUrl: '172.31.34.116:8081', 
-                  nexusVersion: 'nexus3', 
-                  protocol: 'http', 
-                  repository: 'sample-releases', 
-                  version: '8.2.0'  
-              }
-            }
+        
         stage('Build Docker Image'){
             steps{
                  sh 'docker build -t sivaram1206/tomcat-docker .'
