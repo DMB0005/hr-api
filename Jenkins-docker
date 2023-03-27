@@ -16,9 +16,9 @@ pipeline{
         
         stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t sivaram1206/tomcat-docker .'
-                 sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name sivaram -p 3900:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker build -t sivaram1206/ubuntu-docker .'
+                 sh 'docker build -t ubuntu:${BUILD_NUMBER} .'
+                 sh 'docker run -itd --name RAM -p 3900:8080 tomcat:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
@@ -26,7 +26,7 @@ pipeline{
                   withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
                       sh "docker login -u sivaram1206 -p ${DOCKER_HUB_CREDENTIALS}"
             }
-            sh 'docker push sivaram1206/tomcat-docker'
+            sh 'docker push sivaram1206/ubuntu-docker'
         }
       }
         
