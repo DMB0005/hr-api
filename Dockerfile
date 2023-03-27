@@ -1,3 +1,3 @@
-FROM git
+FROM ubuntu
 # Dummy text to test 
 
