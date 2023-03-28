@@ -1,0 +1,38 @@
+pipeline{
+    agent any
+     
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git branch: 'main', credentialsId: 'GIT', url: 'https://github.com/athotasivaram/hr-api.git'
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean deploy"
+                
+            }
+        }
+        stage('Upload War To Nexus'){
+            steps{
+                  nexusArtifactUploader artifacts: [
+                       [
+                            artifactId: 'myweb', 
+                            classifier: '', 
+                            file: "target/myweb-8.2.0.war", 
+                            type: 'war'
+                       ]
+                  ], 
+                  credentialsId: 'nexus3', 
+                  groupId: 'in.javahome', 
+                  nexusUrl: '172.31.3.178:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'sample-releases', 
+                  version: '8.2.0'  
+              }
+            }
+            
+            }
+            }
+            
