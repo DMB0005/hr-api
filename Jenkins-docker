@@ -20,7 +20,7 @@ pipeline{
                        [
                             artifactId: 'hr-api', 
                             classifier: '', 
-                            file: "target/myweb-8.2.0.war", 
+                            file: "target/hr-api-8.2.0.war", 
                             type: 'war'
                        ]
                   ], 
@@ -29,7 +29,7 @@ pipeline{
                   nexusUrl: '172.31.3.178:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'sample-releases', 
+                  repository: 'sample-releaes', 
                   version: '8.2.0'  
               }
             }
