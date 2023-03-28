@@ -18,7 +18,7 @@ pipeline{
             steps{
                  sh 'docker build -t sivaram1206/ubuntu-docker .'
                  sh 'docker build -t ubuntu:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name RAM -p 3900:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name RAM -p 3900:8080 ubuntu:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
