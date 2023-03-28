@@ -1,3 +1,3 @@
-FROM ubuntu
+FROM jenkins
 # Dummy text to test 
 
