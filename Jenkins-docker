@@ -20,7 +20,7 @@ pipeline{
                        [
                             artifactId: 'hr-api', 
                             classifier: '', 
-                            file: "target/hr-api-8.2.0.war", 
+                            file: "target/myweb-8.2.0.war", 
                             type: 'war'
                        ]
                   ], 
