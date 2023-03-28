@@ -18,7 +18,7 @@ pipeline{
             steps{
                  sh 'docker build -t sivaram1206/git-docker .'
                  sh 'docker build -t git:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name kumar -p 3800:8080 git:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name kumar -p 300:8080 git:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
