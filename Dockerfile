@@ -1,3 +1,3 @@
-FROM jenkins
+FROM git
 # Dummy text to test 
 
