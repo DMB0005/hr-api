@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2 style='color: blue'>tomcat cicd CI/CD!</h2>
+<h2 style='color: blue'>tomcat freestyle CI/CD!</h2>
 </body>
 </html>
