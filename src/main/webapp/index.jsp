@@ -1,5 +1,5 @@
 <html>
 <body>
-<h6 style='color: blue'>pipeline job CI/CD!</h6>
+<h1 style='color: green'>pipeline job CI/CD!</h1>
 </body>
 </html>
