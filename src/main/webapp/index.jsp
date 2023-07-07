@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2 style='color: blue'>Tomcat cicd CI/CD!</h2>
+<h6 style='color: blue'>pipeline job CI/CD!</h6>
 </body>
 </html>
