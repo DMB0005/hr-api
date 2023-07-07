@@ -4,25 +4,25 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git branch: 'main', credentialsId: 'GIT', url: 'https://github.com/athotasivaram/hr-api.git'
+                git branch: 'main', credentialsId: 'dmb', url: 'https://github.com/DMB0005/hr-api.git'
             }
         }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-                sh "mv target/*.war target/myweb.war"
+                sh "mv target/*.war target/hr-api.war"
              
             }
         }
         stage("deploy-dev"){
             steps{
-                sshagent(['deploy']) {
+                sshagent(['dmb1']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.war  ec2-user@172.31.41.155:/home/ec2-user/apache-tomcat-9.0.73/webapps/
+                    scp -o StrictHostKeyChecking=no target/hr-api.war  ec2-user@172.31.37.171:/home/ec2-user/apache-tomcat-10.1.10/webapps/
                     
-                    ssh ec2-user@172.31.41.155 /home/ec2-user/apache-tomcat-9.0.73/bin/shutdown.sh
+                    ssh ec2-user@172.31.37.171 /home/ec2-user/apache-tomcat-10.1.10/bin/shutdown.sh
                     
-                    ssh ec2-user@172.31.41.155 /home/ec2-user/apache-tomcat-9.0.73/bin/startup.sh
+                    ssh ec2-user@172.31.37.171 /home/ec2-user/apache-tomcat-10.1.10/bin/startup.sh
                 
                 """
             }
