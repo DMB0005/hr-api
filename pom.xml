@@ -49,7 +49,7 @@
 		
 		<repository>
 		    <id>nexusRepo</id>
-		    <url>http://35.78.232.145:8081/repository/sample-releases/</url>
+		    <url>http://52.66.189.117:8081/repository/sample-releases/</url>
 		</repository>
   	</distributionManagement>
 	
