@@ -4,7 +4,7 @@
   <groupId>in.javahome</groupId>
   <artifactId>hr-api</artifactId>
   <packaging>war</packaging>
-  <version>8.2.1</version>
+  <version>8.2.2</version>
   <name>hr-api Maven Webapp</name>
   <url>http://maven.apache.org</url>
    
